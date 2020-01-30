@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface DataJpaRepository extends JpaRepository<Data, Long> {
 
-    @Query(value = "SELECT * FROM data LIMIT :limit", nativeQuery = true)
+    @Query(value = "SELECT * FROM data LIMIT :limit", nativeQuery = true) // customize JPA SQL language
     List<Data> findAllByLimit(@Param("limit") Integer limit);
 
     List<Data> findByClientId(Long clientId);
