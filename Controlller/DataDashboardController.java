@@ -38,9 +38,11 @@ public class DataDashboardController {
         return dataDao.findAll(limit);
     }
 
-
+    // 例如微信朋友圈步数排列，然后取步数排名在一定range之间
+    // 按照clinetID去找
+    // localhost: 8080/api/v1/data/client/666?field=step_count&sort=desc||start==7&&end==10
     @GetMapping("/data/client/{clientId}")
-    public List<Data> findDataByClientId(
+    public List<Data> findDataByClientId(  //这个功能叫 findDataByClientId
             @PathVariable Long clientId,
             @RequestParam(name = "field", required = false) String field,
             @RequestParam(name = "sort", required = false) String sort,
