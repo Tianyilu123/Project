@@ -31,8 +31,10 @@ public class DataDashboardController {
         return dataDao.findById(id);
     }
 
+    // 返回所有种类的数据给用户,你自己可以限定返回前多少行数据
     @GetMapping("/data")
     public List<Data> getAllData(@RequestParam(name = "limit", required = false) String limit) {
+        // 把这个命令转发给model层，其实是在model层实现的
         return dataDao.findAll(limit);
     }
 
