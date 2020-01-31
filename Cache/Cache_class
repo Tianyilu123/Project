@@ -1,1 +1,29 @@
 
+package com.techbow.datadashboard.chache;
+
+import com.techbow.datadashboard.model.dvo.Data
+import org.springframework.stereotype.Component;
+
+import java.util.HashMap;
+import java.util.Map;
+
+@Component
+public class Cache {
+  private Map<String, Data> map = new HashMap<>();
+  
+  public void put(String key, Data data) {
+  System.outPrintln("Putting from Cache for Data Key: " + key + "; Data id : "+ data.getId());
+  map.put(key, value);
+  }
+  
+  public Data get(String key) {
+    if(map.containsKey(key)) {
+      Data res = map.get(key);
+      System.out.println("Getting from Cache for Data Id : " + res.getId());
+      return res;
+    } else {
+      return null;
+    }
+  }
+}
+  
