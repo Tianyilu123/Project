@@ -20,7 +20,7 @@ public class DataDashboardController {
     private DataDao dataDao;
 
     // @Autowired
-    private Cache cache
+    // private Cache cache
     
     @PostMapping("/data")
     public Data createData(@RequestBody Data data) {
